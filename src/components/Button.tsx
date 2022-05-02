@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { FC, MouseEventHandler } from 'react'
 
-export const Button = () => {
+interface props{
+    text?: string;
+    click?: MouseEventHandler<HTMLDivElement> | undefined;
+    Icon?: any;
+    cssClass?: string;
+}
+
+export const Button:FC<props> = ({text,Icon,click,cssClass=''}) => {
   return (
-    <div>Button</div>
+    <div className={`btn ${cssClass}`} onClick={click}>
+      {
+        text&&<span>{text}</span>
+      }
+        {
+          Icon&&<Icon/>
+        }
+        
+    </div>
   )
 }
 
