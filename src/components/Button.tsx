@@ -9,7 +9,7 @@ interface props{
 
 export const Button:FC<props> = ({text,Icon,click,cssClass=''}) => {
   return (
-    <div className={`btn ${cssClass}`} onClick={click}>
+    <div className={cssClass} onClick={click}>
       {
         text&&<span>{text}</span>
       }
